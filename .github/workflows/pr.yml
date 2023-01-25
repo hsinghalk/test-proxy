@@ -9,12 +9,15 @@ on:
       - opened
 jobs:
   send-pull-events:
-    name: PR Logs to ES
+    name: PR Workflow for API Linting
     runs-on: ubuntu-latest
     
     steps:
-#       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Install Vacuum Lint
         run: curl -fsSL https://quobix.com/scripts/install_vacuum.sh | sh
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v35
       - name: Analyze the Proxy
-        run: vacuum lint -d *.json
+        run: vacuum lint -d ${{ steps.changed-files-specific.outputs.all_changed_files }}
