@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: PR Workflow for API Linting
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  send-pull-events:
+    name: PR Logs to ES
+    runs-on: ubuntu-latest
+    
+    steps:
+#       - uses: actions/checkout@v2
+      - name: Install Vacuum Lint
+        run: curl -fsSL https://quobix.com/scripts/install_vacuum.sh | sh
+      - name: Analyze the Proxy
+        run: vacuum lint -d *.json
