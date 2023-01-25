@@ -14,18 +14,20 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
+          
       - name: Install Vacuum Lint
         run: curl -fsSL https://quobix.com/scripts/install_vacuum.sh | sh
+
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v35
-        with:
-          files: **/*.json
+
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
           done
+
       - name: Analyze the Proxy
         run: |
           vacuum lint -d ${{ steps.changed-files-specific.outputs.all_changed_files }}
