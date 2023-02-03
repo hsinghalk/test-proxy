@@ -31,5 +31,6 @@ jobs:
       - name: Analyze the Proxy
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file"
             vacuum lint -d $file
           done
