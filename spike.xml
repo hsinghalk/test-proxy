@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SpikeArrest continueOnError="false" enabled="true" name="spike">
-	<DisplayName>spike</DisplayName>
-	<Properties/>
-	<Identifier ref="request.header.some-header-name"/>
-	<MessageWeight ref="request.header.weight"/>
-	<Rate>30ps</Rate>
+<SpikeArrest continueOnError="false" enabled="true" name="Spike-arrest">
+  <DisplayName>Spike-arrest</DisplayName>
+  <Properties/>
+  <Rate>3pm</Rate>
 </SpikeArrest>
+
