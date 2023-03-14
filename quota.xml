@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Quota continueOnError="false" enabled="true" name="Quota-policy">
-  <DisplayName>Quota-policy</DisplayName>
+<Quota continueOnError="false" enabled="true" name="quota">
+  <DisplayName>quota</DisplayName>
   <Properties/>
   <Allow count="2"/>
   <Interval>1</Interval>
