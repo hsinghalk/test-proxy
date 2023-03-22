@@ -25,13 +25,13 @@ jobs:
       - name: List JSON files
         run: |
           echo "Changed JSON files:"
-          for file in ${{ steps.changed-files.outputs.json_changed_files }}; do
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file"
           done
 
       - name: Analyze the Proxy
         run: |
           echo "Running vacuum lint on JSON files:"
-          for file in ${{ steps.changed-files.outputs.json_changed_files }}; do
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             vacuum lint -d $file
           done
