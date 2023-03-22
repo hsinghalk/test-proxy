@@ -2,11 +2,11 @@
 
 name: PR Workflow for API Linting
 
-# Controls when the workflow will run
 on:
   pull_request:
     types:
       - opened
+
 jobs:
   send-pull-events:
     name: PR Workflow for API Linting
@@ -25,16 +25,16 @@ jobs:
       - name: List JSON files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ "$file" == *.json ]]; then
-              echo "$file"
+            if [[ $file == *.json ]]; then
+              echo "$file was changed"
             fi
           done
-      
-      - name: Analyze JSON files
+
+      - name: Analyze the Proxy
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ "$file" == *.json ]]; then
-              echo "Analyzing $file"
-              vacuum lint -d "$file"
+            if [[ $file == *.json ]]; then
+              echo "$file"
+              vacuum lint -d $file
             fi
           done
