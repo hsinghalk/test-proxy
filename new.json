@@ -3,6 +3,7 @@
         "name":       "sonoo",   
         "salary":      56000,   
         "married":    true ,
-        "address":    "kanpur"
+        "address":    "kanpur",
+        "age": 23
     }  
 }  
