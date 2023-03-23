@@ -20,7 +20,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files
-        uses: technote-space/get-diff-action@v4
+        uses: tj-actions/changed-files@v35
 
       - name: List JSON files
         run: |
