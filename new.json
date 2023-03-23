@@ -4,6 +4,7 @@
         "salary":      56000,   
         "married":    true ,
         "address":    "kanpur",
-        "age": 23
+        "age": 23,
+        "company": "nashtech"
     }  
 }  
