@@ -20,7 +20,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files
-        uses: actions/checkout
+        uses: actions/checkout@v2
 
       - name: List JSON files
         run: |
