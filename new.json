@@ -1,0 +1,10 @@
+{  
+    "employee": {  
+        "name":       "sonoo",   
+        "salary":      56000,   
+        "married":    true ,
+        "address":    "kanpur",
+        "age": 24,
+        "company": "nashtech"
+    }  
+}  

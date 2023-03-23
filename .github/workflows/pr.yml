@@ -2,11 +2,12 @@
 
 name: PR Workflow for API Linting
 
-# Controls when the workflow will run
 on:
   pull_request:
     types:
       - opened
+      - reopened
+
 jobs:
   send-pull-events:
     name: PR Workflow for API Linting
@@ -18,19 +19,40 @@ jobs:
       - name: Install Vacuum Lint
         run: curl -fsSL https://quobix.com/scripts/install_vacuum.sh | sh
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v35
+      - name: Run Bash script
+        run: | 
+          pwd
+          
+          bash ./.github/workflows/my-script.sh 
 
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+      - name: Run Bash script
+        run: | 
+          echo "$FILES_CHANGED"
 
-      - name: Analyze the Proxy
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file"
-            vacuum lint -d $file
-          done
+      # - name: Get changed files
+      #   id: changed-files
+      #   uses: tj-actions/changed-files@v35
+
+
+      # - name: List all changed files
+      #   run: |
+      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+      #       echo "$file was changed"
+      #     done
+
+      # - name: List JSON files
+      #   run: |
+      #     echo "Changed JSON files:"
+      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+      #       if [[ $file == *.json ]]; then
+      #         echo "$file"
+      #       fi
+      #     done
+      # - name: Analyze the Proxy
+      #   run: |
+      #     echo "Running vacuum lint on JSON files:"
+      #     for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+      #       if [[ $file == *.json ]]; then
+      #         vacuum lint -d $file
+      #       fi
+      #     done
