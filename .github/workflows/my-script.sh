@@ -8,3 +8,7 @@ FILES_CHANGED=$(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$
 
 # Print the list of changed JSON files
 echo "$FILES_CHANGED"
+
+for files in $FILES_CHANGED; do
+    vacuum lint -d $files
+done
