@@ -21,7 +21,8 @@ jobs:
       - name: Run Bash script
         run: | 
           pwd
-          bash my-script.sh 
+          
+          bash ./.github/workflows/my-script.sh 
 
 
       # - name: Get changed files
