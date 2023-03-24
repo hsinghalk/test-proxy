@@ -6,6 +6,7 @@ on:
   pull_request:
     types:
       - opened
+      - reopened
 
 jobs:
   send-pull-events:
@@ -24,6 +25,9 @@ jobs:
           
           bash ./.github/workflows/my-script.sh 
 
+      - name: Run Bash script
+        run: | 
+          echo "$FILES_CHANGED"
 
       # - name: Get changed files
       #   id: changed-files
