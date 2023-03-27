@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="basicauth" mapIdentifier="BasicAuthKVM">
+    <DisplayName>BasicAuth</DisplayName>
+    <Properties/>
+    <ExclusiveCache>false</ExclusiveCache>
+    <Get assignTo="credentials.username" index="1">
+        <Key>
+            <Parameter>magicUsername</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="credentials.password" index="1">
+        <Key>
+            <Parameter>magicPassword</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>
