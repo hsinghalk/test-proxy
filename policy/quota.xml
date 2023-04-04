@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota continueOnError="false" enabled="true" name="quota">
+  <DisplayName>quota</DisplayName>
+  <Properties/>
+  <Allow count="2"/>
+  <Interval>1</Interval>
+  <TimeUnit>minute</TimeUnit>
+  <Distributed>true</Distributed>
+  <Synchronous>true</Synchronous>
+</Quota>
